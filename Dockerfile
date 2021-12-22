@@ -8,7 +8,7 @@ ENV HOME=/${WORKDIR} \
     TZ=Asia/Tokyo \
     HOST=0.0.0.0 \
     API_URL=${API_URL}
-    
+
 WORKDIR ${HOME}
 
 COPY package*.json ./
