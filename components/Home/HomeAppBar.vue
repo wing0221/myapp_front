@@ -54,7 +54,7 @@
           v-for="(menu, i) in menus"
           :key="`menu-list-${i}`"
           exact
-          @click="$vuetify.goTo('#${menu.title}')"
+          @click="$vuetify.goTo(`#${menu.title}`)"
         >
           <v-list-item-title>
             {{ $t(`menus.${menu.title}`) }}
