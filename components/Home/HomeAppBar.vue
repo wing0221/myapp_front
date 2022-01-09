@@ -9,13 +9,6 @@
     <app-logo
       @click.native="$vuetify.goTo('#scroll-top')"
     />
-    <!-- app-title コンポーネントが正常に動作しないため、見えけしとする -->
-    <!--
-       <v-toolbar-title
-      class="hidden-mobile-and-down"
-    >
-      {{ appName }}
-    </v-toolbar-title> -->
     <app-title
       class="hidden-mobile-and-down"
     />
@@ -34,8 +27,8 @@
       </v-btn>
     </v-toolbar-items>
 
-    <app-signup-button />
-    <app-login-button />
+    <before-login-app-signup-button />
+    <before-login-app-login-button />
 
     <!-- ハンバーガーメニュー追加 -->
     <v-menu
@@ -72,11 +65,7 @@
 </template>
 
 <script>
-import AppLoginButton from '../App/AppLoginButton.vue'
-import AppSignupButton from '../App/AppSignupButton.vue'
-import AppTitle from '../App/AppTitle.vue'
 export default {
-  components: { AppSignupButton, AppLoginButton, AppTitle },
   props: {
     menus: {
       type: Array,
