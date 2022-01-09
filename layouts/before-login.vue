@@ -9,9 +9,6 @@
 </template>
 
 <script>
-import BaforeLoginAppBar from '../components/BaforeLogin/BaforeLoginAppBar.vue'
-import AppFooter from '../components/App/AppFooter.vue'
 export default {
-  components: { BaforeLoginAppBar, AppFooter }
 }
 </script>

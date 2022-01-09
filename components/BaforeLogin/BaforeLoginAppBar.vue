@@ -11,20 +11,13 @@
       <app-logo />
     </nuxt-link>
 
-    <!-- app-title コンポーネントが正常に動作しないため、見えけしとする -->
-    <!--
-       <v-toolbar-title
-      class="hidden-mobile-and-down"
-    >
-      {{ appName }}
-    </v-toolbar-title> -->
     <app-title
       class="hidden-mobile-and-down"
     />
     <v-spacer />
 
-    <app-signup-button />
-    <app-login-button />
+    <before-login-app-signup-button />
+    <before-login-app-login-button />
   </v-app-bar>
 </template>
 
