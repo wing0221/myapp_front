@@ -7,7 +7,7 @@
     color="white"
   >
     <nuxt-link
-      to="redirectPath"
+      to="homePath"
       class="text-decoration-none"
     >
       <app-logo />
@@ -15,13 +15,18 @@
 
     <app-title />
     <v-spacer />
-    <before-login-app-signup-button />
-    <before-login-app-login-button />
+    <!-- <before-login-app-signup-button />
+    <before-login-app-login-button /> -->
     <logged-in-app-bar-account-menu />
   </v-app-bar>
 </template>
 
 <script>
 export default {
+  data ({ $store }) {
+    return {
+      homePath: $store.state.loggedIn.homePath
+    }
+  }
 }
 </script>
