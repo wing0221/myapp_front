@@ -3,9 +3,12 @@
     app
     dense
     elevation="1"
-    clipped-left
+    :clipped-left="clippedLeft"
     color="white"
   >
+    <slot
+      name="navigation-toggle-button"
+    />
     <nuxt-link
       to="homePath"
       class="text-decoration-none"
@@ -15,14 +18,18 @@
 
     <app-title />
     <v-spacer />
-    <!-- <before-login-app-signup-button />
-    <before-login-app-login-button /> -->
     <logged-in-app-bar-account-menu />
   </v-app-bar>
 </template>
 
 <script>
 export default {
+  props: {
+    clippedLeft: {
+      type: Boolean,
+      default: false
+    }
+  },
   data ({ $store }) {
     return {
       homePath: $store.state.loggedIn.homePath
