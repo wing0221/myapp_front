@@ -3,12 +3,12 @@
     v-model="setDrawer"
     app
     clipped
-    mobile-breakpoint="mobileBreakpoint"
+    :mobile-breakpoint="mobileBreakpoint"
   >
     <v-list>
       <!-- close button -->
       <template
-        v-if="isBreakpoint"
+        v-if="isMobileBreakpointLessThan"
       >
         <v-list-item
           @click="$emit('update:drawer', false)"
@@ -29,7 +29,6 @@
         <v-divider />
       </template>
       <!-- nav menus -->
-      <v-divider />
       <v-list-item
         v-for="(nav, i) in navMenus"
         :key="`nav-${i}`"
@@ -75,9 +74,9 @@ export default {
       get () { return this.drawer },
       set (newVal) { return this.$emit('update:drawer', newVal) }
     },
-    isBreakpoint () {
+    isMobileBreakpointLessThan () {
       const widowWidth = this.$vuetify.breakpoint.width
-      return this.mobileisBreakpoint > widowWidth
+      return this.mobileBreakpoint > widowWidth
     }
   }
 }
