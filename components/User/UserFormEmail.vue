@@ -24,7 +24,7 @@ export default {
     return {
       rules: [
         v => !!v || '',
-        v => /.+@.\..+/.test(v) || ''
+        v => /.+@.+\..+/.test(v) || ''
       ]
     }
   },
